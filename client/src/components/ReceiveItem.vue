@@ -28,15 +28,15 @@ function onTextClick(): void {
 
 function isLinkMessage(text: string): boolean {
   if (props.type === 'TRANSFER_TYPE_TEXT') {
-    const urlPattern = new RegExp(
-      '^(https?:\\/\\/)?' + // protocol
-        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|' + // domain name
-        '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
-        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
-        '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
-        '(\\#[-a-z\\d_]*)?$',
-      'i', // fragment locator
-    )
+    const urlPattern =  new RegExp(
+      '^(https?:\\/\\/)?' + // 协议
+      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // 域名
+      '((\\d{1,3}\\.){3}\\d{1,3}))' + // 或者IP地址
+      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // 端口和路径
+      '(\\?[;&a-z\\d%_.~+=-]*)?' + // 查询字符串
+      '(\\#[-a-z\\d_]*)?$', // 片段标识符
+      'i' // 忽略大小写
+    );
     return !!urlPattern.test(text)
   }
   return false

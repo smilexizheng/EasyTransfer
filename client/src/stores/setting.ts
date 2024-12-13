@@ -54,25 +54,7 @@ export const useSettingStore = defineStore('setting', () => {
   // iceServers
   const iceServers: Ref<IceServer[]> = ref([
     {
-      urls: 'stun:stun.relay.metered.ca:80',
-    },
-    {
-      urls: 'turn:global.relay.metered.ca:80',
-      username: 'cf841207b56ebddc17948dde',
-      credential: '0dGvvEm7eq2UaqlW',
-    },
-    {
-      urls: 'turn:global.relay.metered.ca:80?transport=tcp',
-      username: 'cf841207b56ebddc17948dde',
-      credential: '0dGvvEm7eq2UaqlW',
-    },
-    {
-      urls: 'turn:global.relay.metered.ca:443',
-      username: 'cf841207b56ebddc17948dde',
-      credential: '0dGvvEm7eq2UaqlW',
-    },
-    {
-      urls: 'turns:global.relay.metered.ca:443?transport=tcp',
+      urls: 'turn:127.0.0.1:3478',
       username: 'cf841207b56ebddc17948dde',
       credential: '0dGvvEm7eq2UaqlW',
     },
